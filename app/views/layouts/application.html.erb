@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pictweet</title>
+    <title>BreadLove</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">PanLove</a></h1>
+        <h1 class="grid-6"><a href="/">BreadLove</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <span><%= current_user.nickname %>
@@ -34,7 +34,7 @@
       <%= yield %>
     <footer>
       <p>
-        Copyright PanLove 2020.
+        Copyright BreadLove 2020.
       </p>
     </footer>
   </body>
