@@ -10,4 +10,5 @@ class Tweet < ApplicationRecord
       Tweet.all
     end
   end
+
 end
