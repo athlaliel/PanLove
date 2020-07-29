@@ -3,6 +3,8 @@ class Tweet < ApplicationRecord
   belongs_to :user
   has_many :comments
 
+  mount_uploader :image, ImageUploader
+
   def self.search(search)
     if search
       Tweet.where('text LIKE(?)', "%#{search}%")
@@ -10,4 +12,5 @@ class Tweet < ApplicationRecord
       Tweet.all
     end
   end
+
 end
