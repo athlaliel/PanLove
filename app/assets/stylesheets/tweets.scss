@@ -2,11 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .top {
-  &__View {
-    width: 100vw;
+  background-color:#FFCC99;
+  &__view{
+    width: 100%;
     height: 500px;
     &__spel {
       color: white;
+      text-align: center;
+      font-size: 30px;
     }
+  }
+}
+
+.footer{
+  &__view {
+    width: 100%;
+    height: 500px;
   }
 }
