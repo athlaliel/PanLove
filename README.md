@@ -1,9 +1,9 @@
 # README
 
-# アプリ概要
+# 🍞アプリ概要
 パン好きな人が自分の好きなパンを投稿できるアプリ
 
-# 開発環境
+# 💻開発環境
 
 - Ruby 2.6.5
 - Ruby on Rails 6.0.0
@@ -11,7 +11,7 @@
 - Github
 - Visual Studio Code
 
-# 実装機能
+# 🥖実装機能
 - ログイン機能
 - 投稿機能
 - 画像ファイルのアップロード機能
@@ -20,7 +20,7 @@
 - ページネーション
 - 都道府県の選択機能
 
-# 使用したGem
+# 🥐使用したGem
 - gem 'pry-rails'
 - gem 'devise'
 - gem 'carrierwave'
