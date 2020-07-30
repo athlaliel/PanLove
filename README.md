@@ -13,11 +13,20 @@
 
 # 実装機能
 - ログイン機能
-- 投稿機能(文章、写真)
-  ※編集、削除は投稿者のみ可能
-- 投稿のコメント機能
+- 投稿機能
+- 画像ファイルのアップロード機能
+- 投稿へのコメント機能
+- 投稿の、詳細表示、編集、削除の3機能
 - ページネーション
+- 都道府県の選択機能
 
+# 使用したGem
+- gem 'pry-rails'
+- gem 'devise'
+- gem 'carrierwave'
+- gem 'mini_magick'
+- gem 'kaminari'
+- gem 'active_hash'
 
 
 This README would normally document whatever steps are necessary to get the
