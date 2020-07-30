@@ -1,19 +1,23 @@
 <div class = "top">
   <%= image_tag "pan.jpg", class: "top__view"%>
-    <h1 class="top__view__spel">あなたの好きなパンは何ですか？ 是非教えて下さい</h1>
+  <h1 class="top__first">Bread Love</h1>
+  <h1 class="top__spel">パン好きによる、パン好きの為の、パン共有サイト</h1>
+</div>
 
 <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
-<div class="contents row">
-  <% @tweets.each do |tweet| %>
-    <%= render partial: "tweet", locals: { tweet: tweet } %>
-  <% end %>
+<div class="main">
+  <div class="contents row">
+    <% @tweets.each do |tweet| %>
+      <%= render partial: "tweet", locals: { tweet: tweet } %>
+    <% end %>
+  </div>
 </div>
 
 <div class="pagenate">
   <%= paginate @tweets %>
+</div>
 
-<div class ="footer">
-  <%= image_tag "pan8.jpg", class: "footer__view"%>
+<%= render partial: "footer" %>
