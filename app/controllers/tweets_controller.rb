@@ -12,6 +12,11 @@ class TweetsController < ApplicationController
 
   def create
     Tweet.create(tweet_params)
+    # if @tweet.save
+    #   redirect_to root_path
+    # else
+    #   render :new
+    # end
   end
 
   def destroy
@@ -38,7 +43,7 @@ class TweetsController < ApplicationController
 
   private
   def tweet_params
-    params.require(:tweet).permit(:image, :text).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:image, :text, :genre_id).merge(user_id: current_user.id)
   end
 
   def set_tweet

@@ -16,6 +16,9 @@
         </ul>
       </div>
       <p><%= tweet.text %></p>
+      <div class="tweet-genre">
+        <%= tweet.genre.name %>
+      </div>
       <span class="name">
         <a href="/users/<%= tweet.user.id %>">
           <span>投稿者</span><%= tweet.user.nickname %>
