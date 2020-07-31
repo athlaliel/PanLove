@@ -5,5 +5,7 @@ class User < ApplicationRecord
           :recoverable, :rememberable, :validatable
   has_many :tweets 
   has_many :comments
-  belongs_to :genre
+  # belongs_to :genre
+
+  validates :nickname, presence: true, length: { maximum: 6 }
 end

@@ -90,5 +90,5 @@
 ### Association
 - has_many :tweets 
 - has_many :comments
-- belongs_to :genre
+
 
