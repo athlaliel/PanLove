@@ -51,26 +51,57 @@
 - gem 'kaminari'
 - gem 'active_hash'
 
+# BreadLoveデータベース
+- ※アプリ作成時名称「panlove」
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル一覧
++-------------------------------+
+| Tables_in_panlove_development |
++-------------------------------+
+| ar_internal_metadata          |
+| comments                      |
+| schema_migrations             |
+| tweets                        |
+| users                         |
++-------------------------------+
 
-Things you may want to cover:
+# tweetsテーブル
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+| text       | varchar(255) | YES  |     | NULL    |                |
+| image      | text         | YES  |     | NULL    |                |
+| created_at | datetime(6)  | NO   |     | NULL    |                |
+| updated_at | datetime(6)  | NO   |     | NULL    |                |
+| user_id    | int(11)      | YES  |     | NULL    |                |
+| genre_id   | int(11)      | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
 
-* Ruby version
+# commentsテーブル
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| id         | bigint(20)  | NO   | PRI | NULL    | auto_increment |
+| user_id    | int(11)     | YES  |     | NULL    |                |
+| tweet_id   | int(11)     | YES  |     | NULL    |                |
+| text       | text        | YES  |     | NULL    |                |
+| created_at | datetime(6) | NO   |     | NULL    |                |
+| updated_at | datetime(6) | NO   |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
 
-* System dependencies
+# usersテーブル
++------------------------+--------------+------+-----+---------+----------------+
+| Field                  | Type         | Null | Key | Default | Extra          |
++------------------------+--------------+------+-----+---------+----------------+
+| id                     | bigint(20)   | NO   | PRI | NULL    | auto_increment |
+| email                  | varchar(255) | NO   | UNI |         |                |
+| encrypted_password     | varchar(255) | NO   |     |         |                |
+| reset_password_token   | varchar(255) | YES  | UNI | NULL    |                |
+| reset_password_sent_at | datetime     | YES  |     | NULL    |                |
+| remember_created_at    | datetime     | YES  |     | NULL    |                |
+| created_at             | datetime(6)  | NO   |     | NULL    |                |
+| updated_at             | datetime(6)  | NO   |     | NULL    |                |
+| nickname               | varchar(255) | YES  |     | NULL    |                |
++------------------------+--------------+------+-----+---------+----------------+
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
