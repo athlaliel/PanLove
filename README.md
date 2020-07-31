@@ -54,54 +54,41 @@
 # BreadLoveデータベース
 - ※アプリ作成時名称「panlove」
 
-# テーブル一覧
-+-------------------------------+
-| Tables_in_panlove_development |
-+-------------------------------+
-| ar_internal_metadata          |
-| comments                      |
-| schema_migrations             |
-| tweets                        |
-| users                         |
-+-------------------------------+
-
 # tweetsテーブル
-+------------+--------------+------+-----+---------+----------------+
-| Field      | Type         | Null | Key | Default | Extra          |
-+------------+--------------+------+-----+---------+----------------+
-| id         | bigint(20)   | NO   | PRI | NULL    | auto_increment |
-| text       | varchar(255) | YES  |     | NULL    |                |
-| image      | text         | YES  |     | NULL    |                |
-| created_at | datetime(6)  | NO   |     | NULL    |                |
-| updated_at | datetime(6)  | NO   |     | NULL    |                |
-| user_id    | int(11)      | YES  |     | NULL    |                |
-| genre_id   | int(11)      | YES  |     | NULL    |                |
-+------------+--------------+------+-----+---------+----------------+
+|Column|Type|Options|
+|------|----|-------|
+|text|varchar(255)
+|image|text|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+|genre_id|integer|null: false, foreign_key: true|
+
+### Association
+- extendActiveHash::Associations::ActiveRecordExtensions
+- belongs_to_active_hash :genre
+- belongs_to :user
+- has_many :comments
 
 # commentsテーブル
-+------------+-------------+------+-----+---------+----------------+
-| Field      | Type        | Null | Key | Default | Extra          |
-+------------+-------------+------+-----+---------+----------------+
-| id         | bigint(20)  | NO   | PRI | NULL    | auto_increment |
-| user_id    | int(11)     | YES  |     | NULL    |                |
-| tweet_id   | int(11)     | YES  |     | NULL    |                |
-| text       | text        | YES  |     | NULL    |                |
-| created_at | datetime(6) | NO   |     | NULL    |                |
-| updated_at | datetime(6) | NO   |     | NULL    |                |
-+------------+-------------+------+-----+---------+----------------+
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false, foreign_key: true|
+|user_id |integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+
+### Association
+- has_many :tweets
+- belongs_to :user
+
 
 # usersテーブル
-+------------------------+--------------+------+-----+---------+----------------+
-| Field                  | Type         | Null | Key | Default | Extra          |
-+------------------------+--------------+------+-----+---------+----------------+
-| id                     | bigint(20)   | NO   | PRI | NULL    | auto_increment |
-| email                  | varchar(255) | NO   | UNI |         |                |
-| encrypted_password     | varchar(255) | NO   |     |         |                |
-| reset_password_token   | varchar(255) | YES  | UNI | NULL    |                |
-| reset_password_sent_at | datetime     | YES  |     | NULL    |                |
-| remember_created_at    | datetime     | YES  |     | NULL    |                |
-| created_at             | datetime(6)  | NO   |     | NULL    |                |
-| updated_at             | datetime(6)  | NO   |     | NULL    |                |
-| nickname               | varchar(255) | YES  |     | NULL    |                |
-+------------------------+--------------+------+-----+---------+----------------+
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false
+|email |string|null: false
+|password|string|null: false
+
+### Association
+- has_many :tweets 
+- has_many :comments
+- belongs_to :genre
 
