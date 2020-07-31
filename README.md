@@ -2,7 +2,6 @@
 
 ![breadLove-title](https://user-images.githubusercontent.com/66309248/88990498-11882680-d319-11ea-9250-1df3fa9f08bc.jpeg)
 
-
 # 🍞アプリ概要
 パン好きな人が自分の好きなパンを投稿できるアプリ
 
@@ -14,6 +13,10 @@
 - Github
 - Visual Studio Code
 
+# トップページ
+
+![demo-bread](https://user-images.githubusercontent.com/66309248/88993328-975ba000-d320-11ea-8ff9-38b4d4cca5fd.gif)
+
 # 🥖実装機能
 - ログイン機能
 - 投稿機能
@@ -22,6 +25,10 @@
 - 投稿の、詳細表示、編集、削除の3機能
 - ページネーション
 - 都道府県の選択機能
+
+# 投稿画面
+
+![tweets](https://user-images.githubusercontent.com/66309248/88993835-f8d03e80-d321-11ea-8e3e-61f676a1f0a2.gif)
 
 # 🥐使用したGem
 - gem 'pry-rails'
