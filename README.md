@@ -51,7 +51,7 @@
 - gem 'kaminari'
 - gem 'active_hash'
 
-# BreadLoveデータベース
+# 🥯BreadLoveデータベース
 - ※アプリ作成時名称「panlove」
 
 # tweetsテーブル
