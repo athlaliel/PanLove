@@ -67,3 +67,4 @@ gem 'mini_magick'
 
 gem 'kaminari'
 gem 'active_hash'
+gem 'jquery-rails'
