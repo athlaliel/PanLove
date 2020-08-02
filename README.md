@@ -3,7 +3,14 @@
 ![breadLove-title](https://user-images.githubusercontent.com/66309248/88990498-11882680-d319-11ea-9250-1df3fa9f08bc.jpeg)
 
 # 🍞アプリ概要
-パン好きな人が自分の好きなパンを投稿できるアプリ
+- パン好きな人が自分の好きなパンを投稿できるアプリ（未完成）
+
+※追加したい実装
+- GoogleMAP-APIを使い、投稿データと紐づけた上でお勧めのパン屋データをMAP上に表示させる事
+
+※改修事項
+- ①コメント登録時に空データでも保存できてしまうので、バリデーションをかける。
+- ②検索をかけると何故か画像が表示されなくなってしまう。
 
 # 💻開発環境
 
@@ -12,6 +19,8 @@
 - MySQL 0.5.3 (DB)
 - Github
 - Visual Studio Code
+- jQuery
+- AWS(デプロイ用)
 
 # トップページ
 
@@ -23,9 +32,12 @@
 - 画像ファイルのアップロード機能
 - 都道府県の選択機能
 - 投稿へのコメント機能
+- コメント時の非同期通信
 - 投稿の検索機能
+- 検索時のインクリメンタルサーチ
 - 投稿の、詳細表示、編集、削除の3機能
 - ページネーション
+- 単体テスト機能
 
 # 投稿画面
 
@@ -50,6 +62,11 @@
 - gem 'mini_magick'
 - gem 'kaminari'
 - gem 'active_hash'
+- gem 'jquery-rails'
+- gem 'rspec-rails', '~> 4.0.0.beta2'
+- gem 'factory_bot_rails'
+- gem 'rails-controller-testing'
+- gem 'faker', "~> 2.8"
 
 # 🥯BreadLoveデータベース
 - ※アプリ作成時名称「panlove」
