@@ -19,6 +19,7 @@
 - MySQL 0.5.3 (DB)
 - Github
 - Visual Studio Code
+- JavaScript
 - jQuery
 - AWS(デプロイ用)
 
