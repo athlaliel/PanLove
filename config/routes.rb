@@ -8,4 +8,8 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: :show
+
+  get 'maps/index'
+  resources :maps, only: [:index]
+
 end
