@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: panlove_production
-  username: panlove
-  password: <%= ENV['PANLOVE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['athla9617'] %>
+  socket: /var/lib/mysql/mysql.sock
