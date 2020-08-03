@@ -54,6 +54,10 @@
 
 ![pagenation](https://user-images.githubusercontent.com/66309248/88995713-5cf50180-d326-11ea-97d0-23d78bf1ec01.gif)
 
+# MAP表示機能
+
+![map](https://user-images.githubusercontent.com/66309248/89151174-4c00f600-d59b-11ea-98a3-8ad297838d7b.gif)
+
 # 🥐使用したGem
 - gem 'pry-rails'
 - gem 'devise'
