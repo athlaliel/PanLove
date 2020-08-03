@@ -20,4 +20,67 @@
   <%= paginate @tweets %>
 </div>
 
+
+<div class="gmap">
+  <h1>店舗検索用GoogleMap</h1>
+
+  <input id="address" type="textbox" >
+  <input type="button" value="検索する" onclick="codeAddress()">
+
+  <div id="display">入力した場所が表示されます</div>
+
+  <div id='map'></div>
+
+  <style>
+  #map {
+    height: 700px;
+    width: 100%%;
+    margin: 0 120px;
+  }
+  </style>
+
+  <script>
+  let map
+
+  const display = document.getElementById('display')
+
+  function initMap(){
+    geocoder = new google.maps.Geocoder()
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 35.7100627, lng:139.8107004},
+      zoom: 12,
+    });
+
+    marker = new google.maps.Marker({
+      position:  {lat: 35.7100627, lng:139.8107004},
+      map: map
+    });
+  }
+
+  let geocoder
+
+  function codeAddress(){
+    let inputAddress = document.getElementById('address').value;
+
+    geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+      if (status == 'OK') {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+        display.textContent = "検索結果：" + results[ 0 ].geometry.location
+      } else {
+        alert('該当する結果がありませんでした：' + status);
+      }
+    });   
+  }
+
+
+  </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGCNQMijhTlp4ouJg1Y2aGPWvxtZfcClU&callback=initMap" async defer>
+  </script>
+</div>
+
 <%= render partial: "footer" %>
