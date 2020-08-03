@@ -24,6 +24,10 @@
 
 ![demo-bread2](https://user-images.githubusercontent.com/66309248/89150392-69cd5b80-d599-11ea-9cfa-d8afcca378ad.gif)
 
+### 作成者
+
+<b><a><a href="https://github.com/athlaliel"><img src="https://avatars1.githubusercontent.com/u/66309248" width="70px;" /></a></b>
+
 # 🥖実装機能
 - ログイン機能
 - 投稿機能
