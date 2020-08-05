@@ -18,7 +18,7 @@
 - Visual Studio Code
 - JavaScript
 - jQuery
-- AWS(デプロイ用)
+- AWS(デプロイ用にEC2とS3を使用)
 
 # トップページ
 
@@ -75,6 +75,9 @@
 - gem 'rails-controller-testing'
 - gem 'faker', "~> 2.8"
 - gem 'jquery-rails'
+- gem 'fog-aws'
+- gem 'unicorn', '5.4.1'
+- gem 'capistrano'
 
 # 🥯BreadLoveデータベース
 - ※アプリ作成時名称「panlove」
@@ -115,5 +118,3 @@
 ### Association
 - has_many :tweets 
 - has_many :comments
-
-
