@@ -126,3 +126,6 @@
 ### Association
 - has_many :tweets 
 - has_many :comments
+
+### 並行して記載したQiita記事
+## https://qiita.com/athlaliel/items/91adb2ac4bc229a2069a
