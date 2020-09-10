@@ -705,14 +705,14 @@ form input[type="submit"] {
 
 .btn,
 header.header div.header__bar.row div.grid-6 a.post {
-  padding: 8px 20px;
+  padding: 8px 13px;
   font-size: 14px;
   border: 2px solid #57C3E9;
   color: #57C3E9;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
-  display: inline-block;
+  /* display: inline-block; */
 }
 
 .btn:hover,
