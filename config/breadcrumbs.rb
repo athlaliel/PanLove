@@ -1,11 +1,12 @@
 crumb :root do
-  link "Home", root_path
+  link "トップページ", root_path
 end
 
-# # マイページ
-# crumb :mypage do
-#   link "マイページ", user_path
-# end
+# マイページ
+crumb :mypage do
+  link "マイページ", user_path
+  parent :root
+end
 
 # crumb :edit_user do |user|
 #   link "編集", edit_user_registration_path
