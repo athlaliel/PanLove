@@ -1,4 +1,6 @@
 <div class = "top">
+  <% breadcrumb :tweets, @tweets %>
+  <%= breadcrumbs separator: " &rsaquo; " %>
   <%= image_tag "pan.jpg", class: "top__view"%>
   <h1 class="top__first">Bread Love</h1>
   <h1 class="top__spel">パン好きによる、パン好きの為の、パン共有サイト</h1>
@@ -8,6 +10,7 @@
   <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
   <%= form.submit "検索", class: "search-btn" %>
 <% end %>
+
 <div class="main">
   <div class="contents row">
     <% @tweets.each do |tweet| %>
