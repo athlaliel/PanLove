@@ -2,15 +2,44 @@ crumb :root do
   link "トップページ", root_path
 end
 
-# マイページ
-crumb :mypage do
-  link "マイページ", user_path
+crumb :tweets do
+  link "投稿一覧", tweets_path
   parent :root
 end
 
-# crumb :edit_user do |user|
-#   link "編集", edit_user_registration_path
-#   parent :root, user
+crumb :tweet do |tweet|
+  link tweet.username, tweet
+  parent :tweets
+end
+
+# crumb :mypage do |users|
+#   link "マイページ", mypage
+#   parent :tweets, users
+# end
+
+# crumb :tweets do
+#   link "トップページ", root_path
+# end
+
+# # マイページ
+# crumb :mypage do
+#   link "マイページ", user_path
+#   parent :root, root_path
+# end
+
+# crumb :shop do |shop|
+#   link shop.name, shop_path
+#   parent :shops
+# end
+
+# crumb :users do |user|
+#   link "マイページ", users_path
+#   parent :tweets, tweets_path
+# end
+
+# crumb :edit do |tweets|
+#   link "編集", edit_path
+#   parent :root, root_path
 # end
 
 # crumb :projects do
