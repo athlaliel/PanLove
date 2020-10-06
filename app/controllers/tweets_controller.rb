@@ -11,12 +11,12 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
-    # if @tweet.save
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
+    if Tweet.create(tweet_params)
+      redirect_to root_path
+    else
+      flash.now[:alert] = 'メッセージを入力してください。'
+      render :new
+    end
   end
 
   def destroy
