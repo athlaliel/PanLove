@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
 
   def create
     if Tweet.create(tweet_params)
+      flash[:notice] = "投稿を作成しました"
       redirect_to root_path
     else
       flash.now[:alert] = 'メッセージを入力してください。'
