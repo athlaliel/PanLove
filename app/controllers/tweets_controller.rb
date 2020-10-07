@@ -12,7 +12,7 @@ class TweetsController < ApplicationController
 
   def create
     if Tweet.create(tweet_params)
-      flash[:notice] = "投稿を作成しました"
+      flash[:notice] = "投稿が完了しました"
       redirect_to root_path
     else
       flash.now[:alert] = 'メッセージを入力してください。'
@@ -23,6 +23,8 @@ class TweetsController < ApplicationController
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
+    flash[:notice] = "投稿を削除しました"
+    redirect_to root_path
   end
 
   def edit
