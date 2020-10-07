@@ -33,11 +33,14 @@ class TweetsController < ApplicationController
   def update
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params)
+    flash[:notice] = "更新が完了しました"
+    redirect_to root_path
   end
 
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+    # flash[:notice] = "コメントを投稿しました"
   end
 
   def search
