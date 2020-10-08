@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
       redirect_to root_path
     else
       flash.now[:alert] = 'メッセージを入力してください。'
-      render :new
+      # render :new
     end
   end
 
@@ -33,8 +33,13 @@ class TweetsController < ApplicationController
   def update
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params)
-    flash[:notice] = "更新が完了しました"
-    redirect_to root_path
+    
+    if tweet.save
+      flash[:notice] = "更新が完了しました"
+      redirect_to root_path
+    else
+      redirect_to("/tweets/#{tweet.id}/edit")
+    end
   end
 
   def show

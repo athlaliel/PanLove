@@ -2,6 +2,11 @@
   <div class="container">
     <%= form_with(model: @tweet, local: true) do |form| %>
       <h3>編集する</h3>
+      <% @tweet.errors.full_messages.each do |message| %>
+        <div class="form-error">
+          <%= message %>
+        </div>
+      <% end %>
       <%= render partial: "form", locals: { form: form } %>
     <% end %>
   </div>
