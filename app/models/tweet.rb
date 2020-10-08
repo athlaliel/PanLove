@@ -5,12 +5,13 @@ class Tweet < ApplicationRecord
   has_many :comments
 
   #空の投稿を保存できないようにする
-  validates :text, :image, :genre, presence: true
+  validates :text, {presence: true, length: {maximum: 70}}
+  validates :image, :genre_id, presence: true
 
   #選択が「--」のままになっていないか
-  with_options numericality: { other_than: 1 } do
-    validates :genre_id
-  end
+  # with_options numericality: { other_than: 1 } do
+  #   validates :genre_id
+  # end
 
   mount_uploader :image, ImageUploader
 

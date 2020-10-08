@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
   # before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @tweets = Tweet.includes(:user).order("created_at DESC").all.page(params[:page]).per(3)
+    @tweets = Tweet.includes(:user).order("created_at DESC").all.page(params[:page]).per(8)
   end
 
   def new
@@ -11,17 +11,20 @@ class TweetsController < ApplicationController
   end
 
   def create
-    Tweet.create(tweet_params)
-    # if @tweet.save
-    #   redirect_to root_path
-    # else
-    #   render :new
-    # end
+    if Tweet.create(tweet_params)
+      flash[:notice] = "投稿が完了しました"
+      redirect_to root_path
+    else
+      flash.now[:alert] = 'メッセージを入力してください。'
+      # render :new
+    end
   end
 
   def destroy
     tweet = Tweet.find(params[:id])
     tweet.destroy
+    flash[:notice] = "投稿を削除しました"
+    redirect_to root_path
   end
 
   def edit
@@ -30,11 +33,19 @@ class TweetsController < ApplicationController
   def update
     tweet = Tweet.find(params[:id])
     tweet.update(tweet_params)
+    
+    if tweet.save
+      flash[:notice] = "更新が完了しました"
+      redirect_to root_path
+    else
+      redirect_to("/tweets/#{tweet.id}/edit")
+    end
   end
 
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+    # flash[:notice] = "コメントを投稿しました"
   end
 
   def search
