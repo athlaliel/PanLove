@@ -11,12 +11,13 @@ class TweetsController < ApplicationController
   end
 
   def create
-    if Tweet.create(tweet_params)
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
       flash[:notice] = "投稿が完了しました"
       redirect_to root_path
     else
       flash.now[:alert] = 'メッセージを入力してください。'
-      # render :new
+      render :new
     end
   end
 
@@ -31,14 +32,15 @@ class TweetsController < ApplicationController
   end
 
   def update
-    tweet = Tweet.find(params[:id])
-    tweet.update(tweet_params)
+    @tweet = Tweet.find(params[:id])
+    @tweet.update(tweet_params)
     
-    if tweet.save
+    if @tweet.save
       flash[:notice] = "更新が完了しました"
       redirect_to root_path
     else
-      redirect_to("/tweets/#{tweet.id}/edit")
+      # redirect_to("/tweets/#{@tweet.id}/edit")
+      render :new
     end
   end
 
