@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   root to: 'tweets#index'
   resources :tweets do
     resources :comments, only: :create
+    resources :likes, only: [:create, :destroy]
     collection do
       get 'search'
     end
-    resources :likes, only: [:create, :destroy]
+    
   end
-  resources :users, only: :show
+  resources :users, only: [:show, :index]
 
   get 'maps/index'
   resources :maps, only: [:index]

@@ -12,7 +12,13 @@
           </li>
         </ul>
       </div>
+      <div id="likes_buttons<%= @tweet.id %>">
+        <%= render partial: 'likes/like', locals: { tweet: @tweet, like: @like} %>
+      </div>
     <% end %>
+
+    
+
     <p><%= @tweet.text %></p>
     <span class="name">
       <a href="/users/<%= @tweet.user.id %>">

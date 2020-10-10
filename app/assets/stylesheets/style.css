@@ -509,6 +509,7 @@ ul li {
   width: 39.86667%;
 }
 
+/* ここが怪しい？ */
 .row .grid-6 {
   width: 48.2%;
 }
@@ -766,10 +767,11 @@ header.header div.header__bar.row div.grid-6 {
   text-align: right;
 }
 
+/* ここか？ログイン後のユーザー一覧と、投稿するの２項目 */
 header.header div.header__bar.row div.grid-6 a.post {
   width: 120px;
   display: inline-left;
-  margin-left: 10px;
+  margin-left: 3px;
 }
 
 header.header .user_nav {
@@ -778,12 +780,13 @@ header.header .user_nav {
   right: 0;
 }
 
+/* ログインユーザーの文字列の位置調整 */
 header.header .user_nav span {
   top: 5px;
   display: block;
   float: left;
-  margin-left: 30px;
-  width: 150px;
+  margin-left: auto;
+  width: 81px;
   height: 50px;
   font-size: 1em;
   cursor: pointer;

@@ -4,6 +4,7 @@ class Tweet < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
 
   #空の投稿を保存できないようにする
   validates :text, {presence: true, length: {maximum: 70}}

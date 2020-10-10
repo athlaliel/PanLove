@@ -3,9 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
-  has_many :tweets 
+  has_many :tweets, dependent: :destroy
   has_many :comments
-  # belongs_to :genre
+  has_many :likes, dependent: :destroy
+  has_many :liked_tweets, through: :likes, source: :tweet
 
   def self.guest
     find_or_create_by!(nickname: 'ゲスト', email: 'guest@example.com') do |user|
