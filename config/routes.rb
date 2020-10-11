@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
     
   end
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :create]
 
   get 'maps/index'
   resources :maps, only: [:index]

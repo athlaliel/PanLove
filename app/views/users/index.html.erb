@@ -1,7 +1,7 @@
 <div class="user-list">
   <h1>ユーザー一覧</h1>
   <% @users.each do |user| %>
-    <a href="/users/<%= user.id %>"><%= user.email %></a>
+    <a href="/users/<%= user.id %>"><%= user.nickname %>"><%= user.email %></a>
     <hr>
   <% end %>
   <%= link_to "ホームへ戻る", root_path %>
