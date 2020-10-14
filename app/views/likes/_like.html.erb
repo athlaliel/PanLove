@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+
+  <% unless @tweet.like_user(current_user.id).blank? %>
+    <%= button_to tweet_like_path(tweet_id: @tweet.id, id: @tweet.likes[0].id), method: :delete, remote: true do %>
+      <div class="vertical_like">
+        <%# <%= image_tag "icon_red_heart.png", size: '40x40' %>
+        <span class="fa fa-heart like-btn-unlike"></span>
+      </div>
+    <% end %>
+  <% else %>
+    <%= button_to tweet_likes_path(@tweet.id), method: :tweet, remote: true do %>
+      <div class="vertical_like">
+        <%# <%= image_tag "icon_heart.png", size: '40x40' %>
+        <span class="fa fa-heart like-btn"></span>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

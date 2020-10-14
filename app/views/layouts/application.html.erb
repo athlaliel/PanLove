@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <%= javascript_include_tag 'application' %>
     <%= favicon_link_tag('favicon.ico') %>
@@ -17,14 +18,15 @@
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <span><%= current_user.nickname %>
-            <ul class="user__info">
-              <li>
-                <%= link_to "マイページ", "/users/#{current_user.id}" %>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-          </span>
+              <ul class="user__info">
+                <li>
+                  <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                </li>
+              </ul>
+            </span>
             <%= link_to "投稿する", new_tweet_path, class: "post" %>
+            <%= link_to "登録者一覧", "users#index", class: "post" %>
           </div>
         <% else %>
           <div class="grid-6">
