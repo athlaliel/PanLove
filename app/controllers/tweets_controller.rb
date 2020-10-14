@@ -39,7 +39,6 @@ class TweetsController < ApplicationController
       flash[:notice] = "更新が完了しました"
       redirect_to root_path
     else
-      # redirect_to("/tweets/#{@tweet.id}/edit")
       render :new
     end
   end
@@ -47,7 +46,6 @@ class TweetsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
-    # flash[:notice] = "コメントを投稿しました"
   end
 
   def search
@@ -57,15 +55,6 @@ class TweetsController < ApplicationController
       format.json
     end
   end
-
-  # def new_guest
-  #   user = User.find_or_create_by!(email: 'guest@example.com') do |user|
-  #     user.password = SecureRandom.urlsafe_base64
-  #     # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
-  #   end
-  #   sign_in user
-  #   redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
-  # end
 
   private
   def tweet_params

@@ -10,10 +10,4 @@ class UsersController < ApplicationController
     @tweets = @user.tweets
   end
 
-  # def create
-  #   @user = User.new(name: params[:name], nickname: params[:nickname], email: params[:email])            
-  #   @user.save            
-  #   redirect_to("/users/#{@user.id}")
-  # end
-
 end
