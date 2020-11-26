@@ -4,8 +4,9 @@
 .top {
   background-color:#FFCC99;
   position: relative;
+  text-align: center;
   &__view{
-    width: 100%;
+    width: 1000px;
     height: 500px;
   }
   &__first {
@@ -27,6 +28,7 @@
     position: absolute;
     left: 270px;
     top: 20px;
+    text-align: center;
   }
   
 }
@@ -62,8 +64,9 @@
 .footer{
   background-color:#FFCC99;
   position: relative;
+  text-align: center;
   &__view {
-    width: 100%;
+    width: 1000px;
     height: 500px;
   }
   &__spel {
