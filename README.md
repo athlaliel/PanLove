@@ -3,7 +3,7 @@
 ![breadLove-title](https://user-images.githubusercontent.com/66309248/88990498-11882680-d319-11ea-9250-1df3fa9f08bc.jpeg)
 
 ## サイトURL
-## http://www.bread-love.xyz/
+## https://www.bread-love.xyz/
 
 # 🍞アプリ概要
 - パン好きな人が自分の好きなパンを投稿できるアプリ
@@ -12,7 +12,7 @@
 - 9/10にゲストログイン機能を追加
 - 投稿時、編集、削除時のフラッシュメッセージ実装
 - 投稿時のエラーバリデーション実装
-- 通信方式のhttps化に挑戦中
+- 11/29 sslを用い、通信方式のhttps化が完了
 
 
 # 💻開発環境
